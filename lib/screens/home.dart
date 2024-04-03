@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         ElevatedButton.icon(
           onPressed: () {
-           Navigator.push(
+            Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const AIPage()),
             );
@@ -52,22 +52,36 @@ class _HomeScreenState extends State<HomeScreen> {
           title: const Text('REST ASD'),
           centerTitle: true,
         ),
-        body: SafeArea(
-          child: Column(
-            children: [
-              Flexible(
-                  child: Container(
-                height: MediaQuery.of(context).size.height,
-              )),
-              Container(
-                decoration: const BoxDecoration(color: Colors.white),
-                child: _buildTextComposer(context),
+        body: Stack(
+          children: [
+            SizedBox(
+              height: double.infinity,
+              width: double.infinity,
+              child: Center(
+                child: SizedBox(
+                    height: 200,
+                    width: 200,
+                    child: Image.asset('lib/images/emoji5.jpg')),
               ),
-              const SizedBox(
-                height: 30,
-              )
-            ],
-          ),
+            ),
+            SafeArea(
+              child: Column(
+                children: [
+                  Flexible(
+                      child: Container(
+                    height: MediaQuery.of(context).size.height,
+                  )),
+                  Container(
+                    decoration: const BoxDecoration(color: Colors.white),
+                    child: _buildTextComposer(context),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  )
+                ],
+              ),
+            ),
+          ],
         ));
   }
 }

@@ -10,6 +10,14 @@ class AIPage extends StatefulWidget {
 class _AIPageState extends State<AIPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Converse sobre o TEA com nossa IA"),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
+      ),
+      body: Container(),
+    );
   }
 }
